@@ -276,19 +276,19 @@ To verify that your application has published successfully, open a new tab in yo
 
 **Scroll** to the **All Services (3)** section and **Click** the ctu2016-apic service.
 
-![Publish Complete](images/STEP3-05-Select_ctu2016_Service.png)
+![Select ctu2016 Service](images/STEP3-05-Select_ctu2016_Service.png)
 
 This will open the **Drafts** page of API Connect. You will not see any drafts since the application and products were published directly to APIC. If you had published a draft or created a draft API on this page, then you would see a list of products and APIs. **Click** the **Hamburger** icon to open the menu.
 
-![Publish Complete](images/STEP3-06-APIC_Bluemix_Drafts.png)
+![APIC Drafts](images/STEP3-06-APIC_Bluemix_Drafts.png)
 
 With the **Menu** open select the **Dashboard** menu option to open the Dashboard.
 
-![Publish Complete](images/STEP3-07-Select_Dashboard.png)
+![Select Dashboard](images/STEP3-07-Select_Dashboard.png)
 
 You can confirm that your application has been published if you see the mynotes application next to the Sandbox.
 
-![Publish Complete](images/STEP3-08-mynotes_Application.png)
+![Publish Confirmed](images/STEP3-08-mynotes_Application.png)
 
 ## Step 4 - Test API on Bluemix
 
