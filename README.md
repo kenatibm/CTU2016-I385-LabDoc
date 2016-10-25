@@ -202,23 +202,23 @@ This will display the credentials for the Cloudant instance. What you are intere
 
 **Next**, with the URL copied, return to your API Designer Tab and past the URL into the URL field. For the **Database** field enter **mynotes**. When done, **Click** the **Save** button.
 
-![Display Cloudant Credentials](images/STEP2-09-Complete_Datasource.png)
+![Complete Datasource](images/STEP2-09-Complete_Datasource.png)
 
 After clicking the **Save** button you will see a message that says "Testing datasource connection". When the message stating "Success Data source connection test succeeded" you will know that your datasource has been created and you can dismiss the message by **clicking** the close button (**x**). 
 
-![Display Cloudant Credentials](images/STEP2-10-Save_Datasource_Success.png)
+![Save Datasource](images/STEP2-10-Save_Datasource_Success.png)
 
 **Next** click the **All Data Sources** link to return to your list of datasources. 
 
-![Display Cloudant Credentials](images/STEP2-11-Close_Datasource.png)
+![Close Datasource](images/STEP2-11-Close_Datasource.png)
 
 Notice that your datasource is now in the list.
 
-![Display Cloudant Credentials](images/STEP2-12-Datasource_Added.png)
+![Dtasource Added](images/STEP2-12-Datasource_Added.png)
 
 **Next** you will need to associate the new datasource with your model. The model was automatically created for you when you selected the notes application at the time you created your API. To associate the datasource with the model, **Click** the **Models** tab.
 
-![Display Cloudant Credentials](images/STEP2-13-Open_Models.png)
+![Open List of Models](images/STEP2-13-Open_Models.png)
 
 **Next** open the Note model by **Clicking** the Note link.
 
@@ -226,9 +226,72 @@ Notice that your datasource is now in the list.
 
 **Next** with the Note model open, change the **Data Source** by selecting the notesDB from the dropdown listbox.
 
-![Display Cloudant Credentials](images/STEP2-15-Change_Note_Datasource.png)
+![Change Datasource](images/STEP2-15-Change_Note_Datasource.png)
 
-**Finally** save the Note model by **Clicking** the **Save** button.
+**Finally** save the Note model by **Clicking** the **Save** button. Then **Click** the **All Models** link to return to the list of models.
 
+![List of Models](images/STEP2-16-List_of_Models.png)
 
 ## Step 3 - Deploy API to Bluemix
+
+To save time an API Connect Bluemix service has been created for your. Hopefully you have remembered the Bluemix account that was assigned to you as you will need it in this step of the lab.
+
+> **Note:** Typically you would test locally before you publish to API Connect on Bluemix, but since we are short on time we will go straight to testing on Bluemix. If you are would like to test locally, the process is to start the server by pressing the play button in the lower left hand corner, this will start a local version of the server. You can then click the Explore button to play around with the APIs.
+
+First you will need to configure the target that you will be publising to. To do this **Click** the **Publish** button.
+
+![Click Publish](images/STEP3-01-Click_Publish.png)
+
+A submenu will appear. Since there are no targets you will need to add one by **Clicking** the **Add and Manage Targets** option.
+
+![Click Add/Manage Targets](images/STEP3-02-Add_Manage_Targets.png)
+
+And then **Click** the **Add IBM Bluemix Target** button.
+
+![Add Bluemix Target](images/STEP3-03-Add_Bluemix_Target.png)
+
+In the dialog that opens, ensure that your Region is set to **United Kingdom** and that your organization is set to your username.  **Select** the Sandbox from the list of API Connect instances and then **Click** the **Next** button.
+
+![Select APIC Instance](images/STEP3-03-Select_APIC_Instance.png)
+
+On the next screen, create a new APIC Application by typing the name of your new application in the text field at the bottom and then **Clicking** the **Add** button.
+
+![Add Application](images/STEP3-03-Add_Application.png)
+
+With the application added (notice that APIC converted the application name to all lower case), **Click** the **Save** button.
+
+This action will create a new target and return you to the API Connect Designer main page.  **Click** the **Publish** button a second time. Notice that the target is now listed. **Click** the target.
+
+![Select Target](images/STEP3-04-Select_Target.png)
+
+**Check** the **Publish Application** and **Stage or Publish Products** checkboxes and **Click** the **Publish** button. This will initiate the application publish process.
+
+![Click Publish](images/STEP3-04-Publish.png)
+
+When the publish is complete, the dialog window will close and there will be a message showing success. **Click** the **Close** message button to clear the message.
+
+![Publish Complete](images/STEP3-04-Publish_Complete.png)
+
+To verify that your application has published successfully, open a new tab in your browser and go to your Bluemix Console by typing [www.bluemix.net](www.bluemix.net). Login if necessary.
+
+**Scroll** to the **All Services (3)** section and **Click** the ctu2016-apic service.
+
+![Publish Complete](images/STEP3-05-Select_ctu2016_Service.png)
+
+This will open the **Drafts** page of API Connect. You will not see any drafts since the application and products were published directly to APIC. If you had published a draft or created a draft API on this page, then you would see a list of products and APIs. **Click** the **Hamburger** icon to open the menu.
+
+![Publish Complete](images/STEP3-06-APIC_Bluemix_Drafts.png)
+
+With the **Menu** open select the **Dashboard** menu option to open the Dashboard.
+
+![Publish Complete](images/STEP3-07-Select_Dashboard.png)
+
+You can confirm that your application has been published if you see the mynotes application next to the Sandbox.
+
+![Publish Complete](images/STEP3-08-mynotes_Application.png)
+
+## Step 4 - Test API on Bluemix
+
+
+
+
