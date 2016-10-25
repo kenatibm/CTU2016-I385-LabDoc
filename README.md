@@ -19,6 +19,7 @@ In addition to the above you will also need a [Bluemix Account](https://console.
 For this lab a Bluemix instance has already been created for you. The usernames and passwords are as follows:
 
 | **Bluemix username/password** | **Organization** | **Space** |
+| ---------------- | ------------------ | -------- |
 | ibmmobileapi+01@gmail.com/CTUlab01 | IBMMobileAPI01 | CTU2016 |
 | ibmmobileapi+02@gmail.com/CTUlab02 | IBMMobileAPI02 | CTU2016 |
 | ibmmobileapi+03@gmail.com/CTUlab03 | IBMMobileAPI03 | CTU2016 |
@@ -127,15 +128,13 @@ apic loopback
 
 You will be prompted for the following:
 
-+ What's the name of your application?
-+ Enter the name of the directory to contain the project:
-+ What kind of application do you have in mind?
+| Question | Answer |
+| :------- | :----- |
+| What's the name of your application? | **MyNotesAPI** |
+| Enter the name of the directory to contain the project: | **My Notes** |
+| What kind of application do you have in mind? | **notes (A project containing ...)** |
 
-The answers are:
-
-+ What's the name of your application? **MyNotesAPI**
-+ Enter the name of the directory to contain the project: **My Notes**
-+ What kind of application do you have in mind? **notes (A project containing ...)**
+![](images/STEP2-01-Create_Notes_API.png)
 
 When the process completes you will be brought back to your command prompt.
 
@@ -145,34 +144,91 @@ When the process completes you will be brought back to your command prompt.
 cd MyNotesAPI
 ```
 
-**Next**, Start the development environment by typing following into your terminal
+**Next**, Start the design environment by typing following into your terminal
 
 ```
 apic edit
 ```
 
-This will open a browser and request that you **Sign in with Bluemix**. Click the **Sign in with Bluemix** button
+This will open a browser and request that you **Sign in with Bluemix**. Click the **Sign in with Bluemix** button.
 
+**Next** create a datasource. With the API Connect Designer displayed **Click** the **Data Sources** link.
 
-
+![Click Datasource Link](images/STEP2-02-Click_Datasources_Link.png)
 
 > **Note:** Optionally you can create a datasource for your API via the command line. To use the command line type the following into your terminal:
+> 
 > ```
 > apic create --type datasource
 > ```
 
-You will be prompted for the following:
+When the Datasources page opens, you will notice that there is already a datasource listed. This is the in-memory database that was created by default when the application was created earlier.
 
-+ Enter the data-source name:
-+ Select the connector for notesDB:
-+ Connection String url to override other settings:
-+ database:
-+ username:
-+ password:
-+ modelIndex:
-+ Install loopback-connector-cloudant@^1.0.4:
+**Next**, create a new datasource by **Clicking** the **Add** button. This will open a dialog name the new datasource. Name it notesDB and **Click** the **New** button.
+
+![Create Datasource](images/STEP2-03-Create_Datasource.png)
+
+This will open a page to enter the credentials for Cloudant. First select the the Connector type and set to **IBM Cloudant DB**. You will notice that when you do this a message will appear stating "This selected connector has not been installed", with a link to Install connector.  **Click** the **Install connector** link to install the Cloudant Loopback Connector.
+
+The next two pieces of information are required they are the URL and the database name. First find the URL by looking at your Cloudant tile on Bluemix. To get the URL for the Cloudant database open a new browser tab and go to your Bluemix instance by typing [www.bluemix.net ](www.bluemix.net).
+
+**Click** the **Log In** button if note alerady logged in.
+
+![Log In to Bluemix](images/STEP2-04-Login_to_Bluemix.png)
+
+Scroll to the the All Services (3) section. Notice that there are three services, they are:
+
+| Service Name | Type |
+| :----------- | :--- |
+| ctu2016-apic | API Connect Service |
+| ctu2016-cloudant | Cloudant Service |
+| ctu2016-mff | MobileFirst Foundation Service |
+
+**Next**, **Click** the **ctu2016-cloudant** service. This will open the Bluemix Cloudant Dashboard for the ctu2016-cloudant service.  !
+
+![Open Cloudant Dashboard](images/STEP2-05-Open_Cloudant.png)
+
+**Next**, with the Cloudant dashboard open, **Click** the **Service Credentials**
+
+![Open CloudantCredentials](images/STEP2-06-Cloudant_Credentials.png)
+
+**Next**, locate and open the **View Credentails** dropdown listbox.
+
+![View Cloudant Credentials](images/STEP2-07-View_Credentials.png)
+
+This will display the credentials for the Cloudant instance. What you are interested in is the URL. The URL attribute will have username and password as part of the URL. Highlight and copy the URL, you will past this into URL attribute for the API Connect Cloudant Datasource you are creating.
+
+![Display Cloudant Credentials](images/STEP2-08-Display_Credentials.png)
+
+**Next**, with the URL copied, return to your API Designer Tab and past the URL into the URL field. For the **Database** field enter **mynotes**. When done, **Click** the **Save** button.
+
+![Display Cloudant Credentials](images/STEP2-09-Complete_Datasource.png)
+
+After clicking the **Save** button you will see a message that says "Testing datasource connection". When the message stating "Success Data source connection test succeeded" you will know that your datasource has been created and you can dismiss the message by **clicking** the close button (**x**). 
+
+![Display Cloudant Credentials](images/STEP2-10-Save_Datasource_Success.png)
+
+**Next** click the **All Data Sources** link to return to your list of datasources. 
+
+![Display Cloudant Credentials](images/STEP2-11-Close_Datasource.png)
+
+Notice that your datasource is now in the list.
+
+![Display Cloudant Credentials](images/STEP2-12-Datasource_Added.png)
+
+**Next** you will need to associate the new datasource with your model. The model was automatically created for you when you selected the notes application at the time you created your API. To associate the datasource with the model, **Click** the **Models** tab.
+
+![Display Cloudant Credentials](images/STEP2-13-Open_Models.png)
+
+**Next** open the Note model by **Clicking** the Note link.
+
+![Display Cloudant Credentials](images/STEP2-14-Select_Note_Model.png)
+
+**Next** with the Note model open, change the **Data Source** by selecting the notesDB from the dropdown listbox.
+
+![Display Cloudant Credentials](images/STEP2-15-Change_Note_Datasource.png)
+
+**Finally** save the Note model by **Clicking** the **Save** button.
 
 
-
-
-
+## Step 3 - Deploy API to Bluemix
