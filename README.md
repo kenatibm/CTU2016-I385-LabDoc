@@ -288,7 +288,7 @@ With the **Menu** open select the **Dashboard** menu option to open the Dashboar
 
 You can confirm that your application has been published if you see the mynotes application next to the Sandbox.
 
-![Publish Confirmed](images/STEP3-08-mynotes_Application.png)
+![Publish Confirmed](images/STEP3-08-mynotes_application.png)
 
 ## Step 4 - Test API on Bluemix
 
