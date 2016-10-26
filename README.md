@@ -291,6 +291,120 @@ You can confirm that your application has been published if you see the mynotes 
 ![Publish Confirmed](images/STEP3-08-mynotes_application.png)
 
 ## Step 4 - Test API on Bluemix
+To test the API, you will use the Developer Portal. The Developer Portal has already been created for you. For more information on configuring the Developer Portal, [visit here](http://www.ibm.com/support/knowledgecenter/SSFS6T/com.ibm.apic.devportal.doc/con_cmsportal_storefront.html). With your browser open to your API Connect Dashboard, **Click** the **Sandbox** item.
+
+![Select Sandbox](images/STEP4-01-Select_Sandbox.png)
+
+**Next**, **Click** the **Settings** tab.
+
+![Select Settings](images/STEP4-02-Select_Settings.png)
+
+**Next**, **Click** the **Portal** Menu Option.
+
+![Select Portal](images/STEP4-03-Select_Portal.png)
+
+This will display information about the Developer Portal configuration. Notice that the IBM Developer Portal has been selected and there is a URL that has been created. **Click** the **Portal URL** to open the Developer Portal.
+
+![Portal URL](images/STEP4-04-Portal_URL.png)
+
+**Next**, with the Developer Portal open, **Click** the **Create Account** to create a new developer account.
+
+![Developer Portal](images/STEP4-05-Developer_Portal.png)
+
+**Next**, Complete the registration form
+
+> **Note:** You will need to use an email address other than the one provided for you as the adminstrator. The email address you use, you must have access to so that you can confirm the registration.
+
+![Registration](images/STEP4-06-Registration_1.png)
+
+With the Registration Form complete, **Click** the **Create new account** button.
+
+![Registration](images/STEP4-06-Registration_2.png)
+
+A message stating that an email confirmation has been sent is your queue that your registration has been created and is awaiting confirmation.
+
+![Registration](images/STEP4-06-Registration_3.png)
+
+To confirm your registration, go to your email account and click the confirmation link.
+
+![Confirmation Email](images/STEP4-07-Confirmation_Email.png)
+
+The confirmation will take you to a login page once you yoru confirmation has been accepted.  **Click** the **Log in** button.
+
+![Confirmation Login](images/STEP4-08-Confirmation_Login.png)
+
+Once you have logged into the Developer Portal, you will need to create an App that will be used to subscribe to the API.  **Click** the **Apps** link.
+
+![Developer Portal](images/STEP4-09-Portal_Main.png)
+
+**Click** the **Register new application** link.
+
+![Developer Portal](images/STEP4-10-Register_Application_Link.png)
+
+Complete the registration form and then **Click** the **Submit** button.
+
+![Developer Portal](images/STEP4-11-Register_Application.png)
+
+Once the application is registered you will need to make note of the Client ID and the Client Secret. These will be used to authenticate your right to use the API.  **Check** the **Show Client Secret** checkbox to show the Client Secret Code, copy this code to the Mousepad application. Also **Check** the **Show** checkbox for the Client ID to show the Client ID and copy this code to the Mousepad application. (See next to learn how to open the Mousepad application).
+
+![Developer Portal](images/STEP4-12-Registered_Application.png)
+
+You can find the Mousepad application under the Operating System Menu | Accessories Menu
+
+![Developer Portal](images/STEP4-12-Mousepad.png)
+
+**Next** choose an API to associate with this application by **Clicking** either the **API Products** tab at the top of the page or the **available APIs** link at the bottom of the page.
+
+![Developer Portal](images/STEP4-13-Available_APIs.png)
+
+**Next**, with the list of APIs shown, **Click** the **MyNotesAPI**
+
+![Developer Portal](images/STEP4-14-Select_API.png)
+
+**Next**, with the API page open, **Click** the **Subscribe** button.
+
+![Developer Portal](images/STEP4-15-Subscribe_to_API.png)
+
+When the dialod window opens, **Check** the **MyNotesApp** radio button and then **Click** the **Subscribe** button.
+
+![Developer Portal](images/STEP4-15-Subscribe_to_API_MyNotesApp.png)
+
+You will see that a message informing you that you have Successfully subscribed to this plan will indicate that your application is now subscribed.
+
+![Developer Portal](images/STEP4-16-Subscribe_to_API_Success.png)
+
+**Next** you can now test out your API.  **Click** the **MyNotesAPI** link on the left.  This will open a list of API endpoints.
+
+![Developer Portal](images/STEP4-16-Subscribe_to_API_Success.png)
+
+**Next** with the list of API endpoints show, scroll to the **GET /Notes** endpoint.
+
+![Developer Portal](images/STEP4-18-Click_Get_Notes.png)
+
+On the right hand side of the page you will see the defination of the API endpoint.  Scroll until you find the **Client Secret** textbox paste in your Client Secret to copied into Mousepad earlier. 
+
+**Click** the **Call operation** button.
+
+![Developer Portal](images/STEP4-18-Get_Notes.png)
+
+Once the operation completes, scroll a little more and you will see the **Request** that was sent and the **Response** that was returned.
+
+![Developer Portal](images/STEP4-18-Get_Notes_Result.png)
+
+> **Note:** If you get a CORS error, follow the link and accept that the error. Then re-run the operation.
+
+## Step 5 - Create MobileFirst Foundation Adapter
+
+
+
+
+
+
+
+
+
+
+
 
 
 
