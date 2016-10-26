@@ -14,26 +14,45 @@ The tools, and the versions, used in this lab are as follows:
 + [gulp Version 3.9.1](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 + [Visual Studio Code Version 1.5.2](https://code.visualstudio.com/download)
 
-In addition to the above you will also need a [Bluemix Account](https://console.ng.bluemix.net). Click [here](https://www.ibm.com/cloud-computing/bluemix/) for more information on [Bluemix](https://www.ibm.com/cloud-computing/bluemix/), IBM's cloud platform that helps you solve real problems and drive business value with applications, infrastructure and services.
+In addition to the above you will also need a [Bluemix Account](https://console.ng.bluemix.net) with at least 4GB of container space. Click [here](https://www.ibm.com/cloud-computing/bluemix/) for more information on [Bluemix](https://www.ibm.com/cloud-computing/bluemix/), IBM's cloud platform that helps you solve real problems and drive business value with applications, infrastructure and services.
 
 For this lab a Bluemix instance has already been created for you. The usernames and passwords are as follows:
 
 | **Bluemix username/password** | **Organization** | **Space** |
 | ---------------- | ------------------ | -------- |
-| ibmmobileapi+01@gmail.com/CTUlab01 | IBMMobileAPI01 | CTU2016 |
-| ibmmobileapi+02@gmail.com/CTUlab02 | IBMMobileAPI02 | CTU2016 |
-| ibmmobileapi+03@gmail.com/CTUlab03 | IBMMobileAPI03 | CTU2016 |
-| ibmmobileapi+04@gmail.com/CTUlab04 | IBMMobileAPI04 | CTU2016 |
-| ibmmobileapi+05@gmail.com/CTUlab05 | IBMMobileAPI05 | CTU2016 |
-| ibmmobileapi+06@gmail.com/CTUlab06 | IBMMobileAPI06 | CTU2016 |
-| ibmmobileapi+07@gmail.com/CTUlab07 | IBMMobileAPI07 | CTU2016 |
-| ibmmobileapi+08@gmail.com/CTUlab08 | IBMMobileAPI08 | CTU2016 |
-| ibmmobileapi+09@gmail.com/CTUlab09 | IBMMobileAPI09 | CTU2016 |
-| ibmmobileapi+10@gmail.com/CTUlab10 | IBMMobileAPI10 | CTU2016 |
-| ibmmobileapi+11@gmail.com/CTUlab11 | IBMMobileAPI11 | CTU2016 |
-| ibmmobileapi+12@gmail.com/CTUlab12 | IBMMobileAPI12 | CTU2016 |
+| student01@ibmmobileapi.33mail.com/CTUlab01 | IBMMobileAPI01 | CTU2016 |
+| student02@ibmmobileapi.33mail.com/CTUlab02 | IBMMobileAPI02 | CTU2016 |
+| student03@ibmmobileapi.33mail.com/CTUlab03 | IBMMobileAPI03 | CTU2016 |
+| student04@ibmmobileapi.33mail.com/CTUlab04 | IBMMobileAPI04 | CTU2016 |
+| student05@ibmmobileapi.33mail.com/CTUlab05 | IBMMobileAPI05 | CTU2016 |
+| student06@ibmmobileapi.33mail.com/CTUlab06 | IBMMobileAPI06 | CTU2016 |
+| student07@ibmmobileapi.33mail.com/CTUlab07 | IBMMobileAPI07 | CTU2016 |
+| student08@ibmmobileapi.33mail.com/CTUlab08 | IBMMobileAPI08 | CTU2016 |
+| student09@ibmmobileapi.33mail.com/CTUlab09 | IBMMobileAPI09 | CTU2016 |
+| student10@ibmmobileapi.33mail.com/CTUlab10 | IBMMobileAPI10 | CTU2016 |
+| student11@ibmmobileapi.33mail.com/CTUlab11 | IBMMobileAPI11 | CTU2016 |
+| student12@ibmmobileapi.33mail.com/CTUlab12 | IBMMobileAPI12 | CTU2016 |
 
 **<font color="red">PLEASE USE THE USERNAME AND PASSWORD ASSIGNED TO YOU</font>**
+
+<!--
+| User | Region | Organization | Space | Developer Portal |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | US South | ken.nelson@us.ibm.com | student1 | https://sb-kennelsonusibmcom-student1.developer.us.apiconnect.ibmcloud.com |
+| 2 | US South | ken.nelson@us.ibm.com | student2 | https://sb-kennelsonusibmcom-student2.developer.us.apiconnect.ibmcloud.com |
+| 3 | US South | ken.nelson@us.ibm.com | student3 | https://sb-kennelsonusibmcom-student3.developer.us.apiconnect.ibmcloud.com |
+| 4 | US South | ken.nelson@us.ibm.com | student4 | https://sb-kennelsonusibmcom-student4.developer.us.apiconnect.ibmcloud.com |
+| 5 | US South | ken.nelson@us.ibm.com | student5 | https://sb-kennelsonusibmcom-student5.developer.us.apiconnect.ibmcloud.com |
+| 6 | US South | ken.nelson@us.ibm.com | student6 | https://sb-kennelsonusibmcom-student6.developer.us.apiconnect.ibmcloud.com |
+| 7 | US South | ken.nelson@us.ibm.com | student7 | https://sb-kennelsonusibmcom-student7.developer.us.apiconnect.ibmcloud.com |
+| 8 | US South | ken.nelson@us.ibm.com | student8 | https://sb-kennelsonusibmcom-student8.developer.us.apiconnect.ibmcloud.com |
+| 9 | US South | ken.nelson@us.ibm.com | student9 | https://sb-kennelsonusibmcom-student9.developer.us.apiconnect.ibmcloud.com |
+| 10 | US South | ken.nelson@us.ibm.com | student10  | https://sb-kennelsonusibmcom-student10.developer.us.apiconnect.ibmcloud.com |
+| 11 | US South | ken.nelson@us.ibm.com | student11 | https://sb-kennelsonusibmcom-student11.developer.us.apiconnect.ibmcloud.com |
+| 12 | US South | ken.nelson@us.ibm.com | student12 | https://sb-kennelsonusibmcom-student12.developer.us.apiconnect.ibmcloud.com |
+
+**<font color="red">PLEASE USE THE SPACE ASSIGNED TO YOU</font>**
+-->
 
 # Information about the VM Used
 
@@ -172,9 +191,10 @@ This will open a page to enter the credentials for Cloudant. First select the th
 
 The next two pieces of information are required they are the URL and the database name. First find the URL by looking at your Cloudant tile on Bluemix. To get the URL for the Cloudant database open a new browser tab and go to your Bluemix instance by typing [www.bluemix.net ](www.bluemix.net).
 
-**Click** the **Log In** button if note alerady logged in.
-
+**Click** the **Log In** button if note alerady logged in. 
 ![Log In to Bluemix](images/STEP2-04-Login_to_Bluemix.png)
+
+Ensure you are using the assigned Organization and Space that was assigned to you.
 
 Scroll to the the All Services (3) section. Notice that there are three services, they are:
 
@@ -395,17 +415,205 @@ Once the operation completes, scroll a little more and you will see the **Reques
 
 ## Step 5 - Create MobileFirst Foundation Adapter
 
+In this step you will create a MobileFirst Adapater to consume the API you just created. Adapters provide mobile security, analytics, and a way to create mobile aware micro-services for your mobile applications. To create a MobileFirst adapter you will use the MobileFirst Command Line Interface.
 
+Start by opening a terminal and navigating to your main project directory. Type the following:
 
+```
+cd ~/MyNotes
+```
 
+**Next**, create your adapter by typing the following:
 
+```
+mfpdev adapter create
+```
 
+Enter the following when prompted:
 
+| Question | Answer |
+| :--- | :--- |
+| Enter adapter name: | MyNotesAdapter |
+| Select adapter type: | HTTP |
+| Enter group id: | com.ibm.mynotes |
 
+This will create a new folder **MyNotesAdapter**
 
+**Next** Open Visual Studio Code
 
+![Open Visual Studio Code](images/STEP5-01-Open_Visual_Studio_Code.png)
 
+**Next** with Visual Studio Code open, open the folder you just created (~/MyNotes/MyNotesAdapter).
 
+![Open Adapter Folder](images/STEP5-02-Open_Adapter_Folder.png)
+
+![Open Adapter Folder](images/STEP5-02-Open_Adapter_Folder_More.png)
+
+HTTP Adapters have two components. The first is an xml file that describes the properties of the adapter. The second is a Javascript file that contains the code to process the adapter methods.
+
+Open the adapter.xml file found in `src/main/adapter-resources`.
+
+**Next** Modify the connection parameters to match the URL from API Connect. For example: `http://api.eu.apiconnect.ibmcloud.com/ibmobileapi-dev/sb/api/Notes`.
+
+| Component | Description  |
+| :--- | :--- |
+| http | Protocol |
+| api.eu.apiconnect.ibmcloud.com | Domain |
+| ibmobileapi-dev | Bluemix Organization & Space |
+| sb/api/Notes | API URL Component |
+
+Edit the connection policy to the following:
+
+```
+	<protocol>https</protocol>
+	<domain>api.us.apiconnect.ibmcloud.com</domain>
+	<port>443</port>
+
+```
+
+Remove all the existing procedures and replace with the following:
+
+```
+	<procedure name="getNotes"/>
+	<procedure name="createNote"/>
+	<procedure name="updateNote"/>
+	<procedure name="deleteNote"/>
+```
+
+Your adapter.xml file should look like the following:
+
+```xml
+<mfp:adapter name="MyNotesAdapter"
+			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			 xmlns:mfp="http://www.ibm.com/mfp/integration"
+			 xmlns:http="http://www.ibm.com/mfp/integration/http">
+
+	<displayName>MyNotesAdapter</displayName>
+	<description>MyNotesAdapter</description>
+	<connectivity>
+		<connectionPolicy xsi:type="http:HTTPConnectionPolicyType">
+			<protocol>https</protocol>
+			<domain>api.us.apiconnect.ibmcloud.com</domain>
+			<port>443</port>
+			<connectionTimeoutInMilliseconds>30000</connectionTimeoutInMilliseconds>
+			<socketTimeoutInMilliseconds>30000</socketTimeoutInMilliseconds>
+			<maxConcurrentConnectionsPerNode>50</maxConcurrentConnectionsPerNode>
+		</connectionPolicy>
+	</connectivity>
+
+	<!-- Publicly available procedures -->
+	<procedure name="getNotes"/>
+	<procedure name="createNote"/>
+	<procedure name="updateNote"/>
+	<procedure name="deleteNote"/>
+
+</mfp:adapter>
+```
+
+**Next** edit the MyNotesAdapter-impl.js. Remove all the code and add the methods to support the procedures identified in the adapter.xml
+
+**First** add following variables. Note that you will need to replace your CLIENT ID, CLIENT SECRET, and BASE URL.
+
+```javascript
+var CLIENT_ID = '[REPLACE WITH CLIENT ID]';
+var CLIENT_SECRET = '[REPLACE CLIENT SECRET]';
+var ACCEPT = 'application/json';
+var JSON_CONTENT_TYPE = 'application/json';
+var URLENCODED_CONTENT_TYPE = 'application/x-www-form-urlencoded';
+var JSON = 'json';
+var POST = 'post';
+var GET = 'get';
+var PUT = 'put';
+var DELETE = 'delete';
+var BASE_URL = '[REPLACE WITH URL]';
+
+var INPUT = {
+	method : this.GET,
+	returnedContentType : JSON,
+	headers: {
+		'Accept': ACCEPT,
+		'Content-Type': JSON_CONTENT_TYPE,
+		'x-ibm-client-id': CLIENT_ID,
+		'x-ibm-client-secret' : CLIENT_SECRET
+	}
+};
+```
+
+**Next** add the code to get the list of notes:
+
+```javascript
+function getNotes() {
+	INPUT.path = BASE_URL;
+	INPUT.method = GET;
+
+	return MFP.Server.invokeHttp(INPUT);
+}
+```
+
+**Next** add the code to create a new note:
+
+```javascript
+function createNote(title, content){
+	var note =  "title=" + title + "&content=" + content;
+
+	var input = {
+		method : PUT,
+		path: BASE_URL,
+		headers: {
+			'Accept' : JSON_CONTENT_TYPE,
+			'x-ibm-client-id': CLIENT_ID,
+			'x-ibm-client-secret' : CLIENT_SECRET},
+		body: {
+			content: note,
+			contentType: URLENCODED_CONTENT_TYPE
+		}
+	};
+
+	return MFP.Server.invokeHttp(input);
+}
+```
+
+**Next** add the code to update an existing note:
+
+```javascript
+function updateNote(id, title, content){
+	var note =  "title=" + title + "&content=" + content;
+	var where = encodeURIComponent('{"_id": "' + id + '"}')
+
+	var input = {
+		method : POST,
+		path: BASE_URL + '/update?where=' + where,
+		headers: {
+			'Accept' : JSON_CONTENT_TYPE,
+			'x-ibm-client-id': CLIENT_ID,
+			'x-ibm-client-secret' : CLIENT_SECRET},
+		body: {
+			content: note,
+			contentType: URLENCODED_CONTENT_TYPE
+		}
+	};
+
+	return MFP.Server.invokeHttp(input);
+}
+```
+
+**Finally** add the code to delete an existing note:
+
+```javascript
+function deleteNote(id){
+	var input = {
+		method : DELETE,
+		path: BASE_URL + '/' + id,
+		headers: {
+			'Accept' : JSON_CONTENT_TYPE,
+			'x-ibm-client-id': CLIENT_ID,
+			'x-ibm-client-secret' : CLIENT_SECRET
+		}
+	};
+
+	return MFP.Server.invokeHttp(input);
+}
+```
 
 
 
