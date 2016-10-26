@@ -72,7 +72,7 @@ The operating system used for the virtual machine is a version of [Ubuntu](https
 1. Deploy API to Bluemix
 1. Test API on Bluemix
 1. Create MobileFirst Foundation Adapter to Consume API
-1. Deploy MobileFirst Foundation Adapter to Bluemix
+1. Build & Deploy MobileFirst Foundation Adapter to Bluemix
 1. Test MobileFirst Foundation Adapter on Bluemix
 1. Get and Configure Notes Application
 1. Modify Notes Application to use MobileFirst Adapter
@@ -614,6 +614,119 @@ function deleteNote(id){
 	return MFP.Server.invokeHttp(input);
 }
 ```
+
+## Step 6 - Build & Deploy MobileFirst Foundation Adapter
+
+To build your adapter you will use the MobileFirst Command Line Interface. **Start** by opening a terminal and navigating to your MyNotesAdapter directory by typing:
+
+```
+cd ~/MyNotes/MyNotesAdapter
+```
+
+**Next** Build your adapter by typing the following:
+
+```
+mfpdev adapter build
+```
+
+**Next** You will need to add the server to the list of servers to deploy to. For this you will use the mfpdev server add command.
+
+```
+mfpdev server add
+```
+
+| Question | Answer |
+| :-- | :-- |
+| Enter the name of the new server profile | MyBluemix | 
+| Enter the fully qualified URL of this server | [REFER TO TABLE BELOW] | 
+| Enter the MobileFirst Server administrator login ID: | admin | 
+| Enter the MobileFirst Server administrator password: | admin | 
+| Enter the context root of the MobileFirst administration services: | mfpadmin | 
+| Enter the MobileFirst Server connection timeout in seconds: 30Make this server the default? | Y | 
+
+| User | URL |
+| :-- | :-- |
+
+
+## Step 7 - Test MobileFirst Foundation Adapter
+
+To test your adapter you will use the MobileFirst Server Console. All adapters maintain a Swagger document that is great for testing your adapter.
+
+**To Start** You will need to start your server console to test your API. To do that open a terminal session, if not already open, and type:
+
+```
+mfpdev server console
+```
+
+Login if necessary. The username is admin and the password is admin.
+
+**Next** you will need to add a user id for testing purposes. MobileFirst Foundation provides a facility for creating temporary credentials in the form of confidential clients. A client has already been created for you, howver if you are interested in seeing where a confidential client is created, **Click** the **Runtime Settings** menu option on the left hand side of the page. Then **Click** the **Confidential Clients** Tab. You will see that a test client has been create for the scope of * (Wildcard), you would want to remove this client id for production.
+
+**Next** Open the MyNotesAdapter by **Clicking** the **MyNotesAdapter** on the left hand side of the page.
+
+![My Notes Adapter](images/STEP7-05-MyNotesAdapter.png)
+
+**Next** **Click** the **Resources** tab.
+
+![Resource Tab](images/STEP7-06-ResourcesTab.png)
+
+Notice the endpoints listed on the Resources page. These are the endpoints created by the adapter. **Click** the **View Swagger Docs** button.
+
+![Swagger Docs](images/STEP7-07-View_Swagger_Docs.png)
+
+**Click** the **default** link to expand the Swagger Doc and display the endpoints.
+
+![Swagger Default](images/STEP7-08-Swagger_Default_Link.png)
+
+**Click** the **GET /getNotes** link to open the getNotes endpoint.
+
+![Get notes](images/STEP7-09-Get_Notes.png)
+
+By default the endpoints are restricted to authenticated users. If you are not authenticated you will get a 401 error. You can test this out if you would like by **Click** the **Try it out!** button. 
+
+![Try it out](images/STEP7-10-Authenticate_User.png)
+
+Notice the error in the **Response Code**.
+
+![Try it out](images/STEP7-11-401_Response.png)
+
+Now authenticate by **Clicking** the **Authentication** switch on the right side of the page.
+
+![Try it out](images/STEP7-12-Authenticate_User.png)
+
+A dialog will open to select the Oauth Scope.  **Check** the **DEFAULT_SCOPE** and then **Click** the **Authorize** button.
+
+![Try it out](images/STEP7-12-Select_Oauth_Scope.png)
+
+Another dialog will open to authenticate the user. Enter **test** for the User Name and **test** for the Password. Then **Click** the **Log In** button to authenticate the user.
+test
+
+![Try it out](images/STEP7-12-Authenticate.png)
+
+Once authenticated you will be brought back to the Swagger page.  **Click** the **Try it out!** button one more time. Once the response comes back, scroll the Response Body and you will see that your call was successful and that there is an array of values.
+
+![Success](images/STEP7-13-Success.png)
+
+The getNotes endpoint does not have any parameters, however the other endpoints do. For instance to create a note you will need to supply a title and some content, for an update you will need to supply an id, title, and content, and to delete you will need to supply an id.
+
+(Optional) To supply parameters enter them as an array of values in the params field for the endpoint. For instance to create a new note provide something like ["My really new note", "This is my really new note content"]
+
+![Parameters](images/STEP7-14-Parameters.png)
+
+**Click** the **Try it out!** button. When the response comes back, scroll the Repsonse Boddy to the end and you will see that a new document has been created.
+
+![Parameters](images/STEP7-15-Success.png)
+
+
+## Step 8 - Get and Configure Notes Application
+
+
+## Step 9 - Modify Notes Application
+
+## Step 10 - Deploy Notes Application to Bluemix
+
+## Step 11 - Test Notes Application
+
 
 
 
