@@ -1,6 +1,10 @@
+<!--
 # Lab I385 - Objective 
 
 # Lab I385 - Case Study
+-->
+
+Document Location [https://github.com/kenatibm/CTU2016-I385-LabDoc](https://github.com/kenatibm/CTU2016-I385-LabDoc)
 
 # Lab I385 - Requirements
 The tools, and the versions, used in this lab are as follows:
@@ -16,6 +20,7 @@ The tools, and the versions, used in this lab are as follows:
 
 In addition to the above you will also need a [Bluemix Account](https://console.ng.bluemix.net) with at least 4GB of container space. Click [here](https://www.ibm.com/cloud-computing/bluemix/) for more information on [Bluemix](https://www.ibm.com/cloud-computing/bluemix/), IBM's cloud platform that helps you solve real problems and drive business value with applications, infrastructure and services.
 
+<!--
 For this lab a Bluemix instance has already been created for you. The usernames and passwords are as follows:
 
 | **Bluemix username/password** | **Organization** | **Space** |
@@ -34,8 +39,8 @@ For this lab a Bluemix instance has already been created for you. The usernames 
 | student12@ibmmobileapi.33mail.com/CTUlab12 | IBMMobileAPI12 | CTU2016 |
 
 **<font color="red">PLEASE USE THE USERNAME AND PASSWORD ASSIGNED TO YOU</font>**
+-->
 
-<!--
 | User | Region | Organization | Space | Developer Portal |
 | :--- | :--- | :--- | :--- | :--- |
 | 1 | US South | ken.nelson@us.ibm.com | student1 | https://sb-kennelsonusibmcom-student1.developer.us.apiconnect.ibmcloud.com |
@@ -52,7 +57,7 @@ For this lab a Bluemix instance has already been created for you. The usernames 
 | 12 | US South | ken.nelson@us.ibm.com | student12 | https://sb-kennelsonusibmcom-student12.developer.us.apiconnect.ibmcloud.com |
 
 **<font color="red">PLEASE USE THE SPACE ASSIGNED TO YOU</font>**
--->
+
 
 # Information about the VM Used
 
@@ -74,11 +79,13 @@ The operating system used for the virtual machine is a version of [Ubuntu](https
 1. Create MobileFirst Foundation Adapter to Consume API
 1. Build & Deploy MobileFirst Foundation Adapter to Bluemix
 1. Test MobileFirst Foundation Adapter on Bluemix
+
+<!--
 1. Get and Configure Notes Application
 1. Modify Notes Application to use MobileFirst Adapter
 1. Deploy Notes Application to MobileFirst Foundation on Bluemix
 1. Test Notes Application
-
+-->
 
 ## Step 1 - Install Command Line Interfaces (CLI)
 The virtual machine that you are using in this lab was created a few months back and as such requires a refresh of some of the command line interfaces (CLI), specifically;
@@ -270,7 +277,22 @@ And then **Click** the **Add IBM Bluemix Target** button.
 
 ![Add Bluemix Target](images/STEP3-03-Add_Bluemix_Target.png)
 
-In the dialog that opens, ensure that your Region is set to **United Kingdom** and that your organization is set to your username.  **Select** the Sandbox from the list of API Connect instances and then **Click** the **Next** button.
+In the dialog that opens, ensure that your Region is set to **US South** and that your organization is set to the organization and space assigned to you.  **Select** the Sandbox from the list of API Connect instances and then **Click** the **Next** button.
+
+| Student | Organization/Spacce |
+| :--- | :--- |
+| 1 | ken.nelson@us.ibm.com(student1) |
+| 2 | ken.nelson@us.ibm.com(student2) |
+| 3 | ken.nelson@us.ibm.com(student3) |
+| 4 | ken.nelson@us.ibm.com(student4) |
+| 5 | ken.nelson@us.ibm.com(student5) |
+| 6 | ken.nelson@us.ibm.com(student6) |
+| 7 | ken.nelson@us.ibm.com(student7) |
+| 8 | ken.nelson@us.ibm.com(student8) |
+| 9 | ken.nelson@us.ibm.com(student9) |
+| 10 | ken.nelson@us.ibm.com(student10) |
+| 11 | ken.nelson@us.ibm.com(student11) |
+| 12 | ken.nelson@us.ibm.com(student12) |
 
 ![Select APIC Instance](images/STEP3-03-Select_APIC_Instance.png)
 
@@ -311,7 +333,28 @@ You can confirm that your application has been published if you see the mynotes 
 ![Publish Confirmed](images/STEP3-08-mynotes_application.png)
 
 ## Step 4 - Test API on Bluemix
-To test the API, you will use the Developer Portal. The Developer Portal has already been created for you. For more information on configuring the Developer Portal, [visit here](http://www.ibm.com/support/knowledgecenter/SSFS6T/com.ibm.apic.devportal.doc/con_cmsportal_storefront.html). With your browser open to your API Connect Dashboard, **Click** the **Sandbox** item.
+To test the API, you will use the Developer Portal. The Developer Portal has already been created for you. For more information on configuring the Developer Portal, [visit here](http://www.ibm.com/support/knowledgecenter/SSFS6T/com.ibm.apic.devportal.doc/con_cmsportal_storefront.html). 
+
+You can either go directly to the developer portal based on your user account below
+
+**Developer Portal Links**
+
+| Student | Developer Portal |
+| :--- | :--- |
+| 1 | https://sb-kennelsonusibmcom-student1.developer.us.apiconnect.ibmcloud.com |
+| 2 | https://sb-kennelsonusibmcom-student2.developer.us.apiconnect.ibmcloud.com |
+| 3 | https://sb-kennelsonusibmcom-student3.developer.us.apiconnect.ibmcloud.com |
+| 4 | https://sb-kennelsonusibmcom-student4.developer.us.apiconnect.ibmcloud.com |
+| 5 | https://sb-kennelsonusibmcom-student5.developer.us.apiconnect.ibmcloud.com |
+| 6 | https://sb-kennelsonusibmcom-student6.developer.us.apiconnect.ibmcloud.com |
+| 7 | https://sb-kennelsonusibmcom-student7.developer.us.apiconnect.ibmcloud.com |
+| 8 | https://sb-kennelsonusibmcom-student8.developer.us.apiconnect.ibmcloud.com |
+| 9 | https://sb-kennelsonusibmcom-student9.developer.us.apiconnect.ibmcloud.com |
+| 10 | https://sb-kennelsonusibmcom-student10.developer.us.apiconnect.ibmcloud.com |
+| 11 | https://sb-kennelsonusibmcom-student11.developer.us.apiconnect.ibmcloud.com |
+| 12 | https://sb-kennelsonusibmcom-student12.developer.us.apiconnect.ibmcloud.com |
+
+Or, if you would prefer to use the API Connect Dashboard you can, with your browser open to your API Connect Dashboard, **Click** the **Sandbox** item.
 
 ![Select Sandbox](images/STEP4-01-Select_Sandbox.png)
 
@@ -644,8 +687,20 @@ mfpdev server add
 | Enter the context root of the MobileFirst administration services: | mfpadmin | 
 | Enter the MobileFirst Server connection timeout in seconds: 30Make this server the default? | Y | 
 
-| User | URL |
+| Student | URL |
 | :-- | :-- |
+| 1 | https://ctu2016-mff-xh-server.mybluemix.net:443 |
+| 2 | https://ctu2016-mff-dt-server.mybluemix.net:443 |
+| 3 | https://ctu2016-mff-io-server.mybluemix.net:443 |
+| 4 | https://ctu2016-mff-fo-server.mybluemix.net:443 |
+| 5 | https://ctu2016-mff-mg-server.mybluemix.net:443 |
+| 6 | https://ctu2016-mff-uk-server.mybluemix.net:443 |
+| 7 | https://ctu2016-mff-yj-server.mybluemix.net:443 |
+| 8 | https://ctu2016-mff-ow-server.mybluemix.net:443 |
+| 9 | https://ctu2016-mff-gf-server.mybluemix.net:443 |
+| 10 | https://ctu2016-mff-xs-server.mybluemix.net:443 |
+| 11 | https://ctu2016-mff-ru-server.mybluemix.net:443 |
+| 12 | https://mobilefoundation-zg-fs-server.mybluemix.net:443 |
 
 
 ## Step 7 - Test MobileFirst Foundation Adapter
@@ -718,6 +773,8 @@ The getNotes endpoint does not have any parameters, however the other endpoints 
 ![Parameters](images/STEP7-15-Success.png)
 
 
+<!--
+
 ## Step 8 - Get and Configure Notes Application
 
 A hybrid mobile has been created that consumes records directly from a Cloudant database. This is the same Cloudant database that you directed API Connect to read from in earlier steps. The application source is stored in a git repository. To download the application from github, first change directories to your working directory:
@@ -747,7 +804,7 @@ npm install
 **Next** add a platform. A platform is a device type such as android, ios, etc. To add a platform type
 
 ```
-ionic platform add android
+ionic platform add android@5.1.1
 ```
 
 **Next** add the MobileFirst Foundation plugin by typing
@@ -757,6 +814,7 @@ ionic plugin add cordova-plugin-mfp
 ```
 
 > **Note:** this will only install the base plugin for MobileFirst Foundation. If your app will support push notifications or offline storage, live update, or fips encryption you will need to install additional plugins. Click the following for a [list of available MobileFirst Foundation plugins](https://www.npmjs.com/search?q=cordova-plugin-mfp).
+
 
 ## Step 9 - Modify Notes Application
 
@@ -858,5 +916,5 @@ export class MyApp {
 ## Step 11 - Test Notes Application
 
 
-
+-->
 
