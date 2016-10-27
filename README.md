@@ -720,8 +720,138 @@ The getNotes endpoint does not have any parameters, however the other endpoints 
 
 ## Step 8 - Get and Configure Notes Application
 
+A hybrid mobile has been created that consumes records directly from a Cloudant database. This is the same Cloudant database that you directed API Connect to read from in earlier steps. The application source is stored in a git repository. To download the application from github, first change directories to your working directory:
+
+```
+cd ~/MyNotes
+```
+
+**Next** download the application from GitHub by typing the following:
+
+```
+git clone https://github.com/kenatibm/MyNotesApp
+```
+
+The previous statement will only download the source. Now you will need to add all the libraries needed to run the app. But first you will need to change directories to the application directory by typing:
+
+```
+cd MyNotesApp
+```
+
+**Next** install the libraries from npm by typing
+
+```
+npm install
+```
+
+**Next** add a platform. A platform is a device type such as android, ios, etc. To add a platform type
+
+```
+ionic platform add android
+```
+
+**Next** add the MobileFirst Foundation plugin by typing
+
+```
+ionic plugin add cordova-plugin-mfp
+```
+
+> **Note:** this will only install the base plugin for MobileFirst Foundation. If your app will support push notifications or offline storage, live update, or fips encryption you will need to install additional plugins. Click the following for a [list of available MobileFirst Foundation plugins](https://www.npmjs.com/search?q=cordova-plugin-mfp).
 
 ## Step 9 - Modify Notes Application
+
+You will use Visual Studio Code to modify the application that was just downloaded to support MobileFirst Foundation. Visual Studio Code supports Javascript as well as frameworks like Ionic 2 and Angular 2, both were used to create the MyNotesApp.  In addition to Javascript support, Visual Studio Code supports Typescript which provides strong typing to Javascript.
+
+**Start** by opening Visual Studio Code if not already open. Then open the folder for the MyNotesApp - File | Open Folder.
+
+![Open MyNotesApp](images/STEP9-01-Open_MyNotesApp.png)
+
+**Next** expand the src directory. The src directory is were all code modification happens within an Angular2/Ionic2 application. When ready to build your application the source code is transpiled from ECMAScript 6 to ECMAScript 5.
+
+![Open src Directory](images/STEP9-02-Expand_SRC_Directory.png)
+
+**Next** open the app.component.ts file under the app directory. The modifications to this component provide the bootstrapping for the MobileFirst libraries.  First add the Renderer library to the @angular/core import.
+
+```javascript
+import { Component, Renderer } from '@angular/core';
+```
+
+**Next** We do not want the page to show until after the MobileFirst lirary has been bootstrapped. Change the rootPage assignment from 
+
+```javascript
+  rootPage = NotesPage;
+```
+
+to
+
+```javascript
+  rootPage: any;
+```
+
+**Next** Add a statement to the constructor to listen for the bootstrapping of the MobileFirst library.
+
+```javascript
+    renderer.listenGlobal('document', 'mfpjsloaded', () => {
+      console.log("==> MFP API Init Complete");
+      this.MFPInit();
+    });
+```
+
+**Next** Remove the following as it is not need as we do not have a Splash screen for this application
+
+```
+   Splashscreen.hide();
+```
+
+**Next** add the MFPInit() method after the constructor.
+
+```javascript
+  MFPInit(){
+    console.log("==> MFP Init Complete.");
+    this.rootPage  = NotesPage;
+  }
+```
+
+The final code should look like below
+
+```javascript
+import { Component, Renderer } from '@angular/core';
+import { Platform } from 'ionic-angular';
+import { StatusBar, Splashscreen } from 'ionic-native';
+import { NotesPage } from '../pages/notes/notes';
+
+
+@Component({
+  template: `<ion-nav [root]="rootPage"></ion-nav>`
+})
+export class MyApp {
+  rootPage: any;
+
+  constructor(platform: Platform, renderer: Renderer) {
+
+    renderer.listenGlobal('document', 'mfpjsloaded', () => {
+      console.log("==> MFP API Init Complete");
+      this.MFPInit();
+    });
+
+    platform.ready().then(() => {
+      StatusBar.styleDefault();
+    });
+  }
+
+  MFPInit(){
+    console.log("==> MFP Init Complete.");
+    this.rootPage  = NotesPage;
+  }
+}
+```
+
+**Next** open the note-provider.ts file under the providers directory. 
+
+
+**COPY worklight.d.ts to providers**
+
+
 
 ## Step 10 - Deploy Notes Application to Bluemix
 
